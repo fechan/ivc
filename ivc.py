@@ -13,8 +13,6 @@ Install OpenCV3 (much faster than v2) with ffmpeg enabled.
 On Mac, download using Homebrew: brew install opencv3 --with-ffmpeg
 """
 
-from __future__ import print_function
-
 __author__ = 'Geoffrey Brookshire'
 __email__ = "geoff.brookshire@gmail.com"
 __license__ = "MIT"
@@ -100,7 +98,7 @@ if __name__ == '__main__':
         inname = sys.argv[1]
         outname = os.path.splitext(inname)[0] + '.csv'
         ivc_arr = ivc_from_file(inname)
-        f = file(outname, 'wb')
+        f = open(outname, 'w')
         f.writelines(str(e) + '\n' for e in ivc_arr)
         f.close()
     else:
